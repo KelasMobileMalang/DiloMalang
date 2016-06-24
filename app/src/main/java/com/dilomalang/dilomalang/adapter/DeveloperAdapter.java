@@ -33,13 +33,15 @@ import com.dilomalang.dilomalang.item.Developer;
 public class DeveloperAdapter extends BaseAdapter {
 
     String [] result;
+    String [] result1;
     Context context;
     int [] imageId;
     private static LayoutInflater inflater=null;
 
-    public DeveloperAdapter(AboutDeveloperActivity mainActivity, String[] prgmNameList, int[] prgmImages) {
+    public DeveloperAdapter(AboutDeveloperActivity mainActivity, String[] prgmNameList, String[] emailList, int[] prgmImages) {
         // TODO Auto-generated constructor stub
         result=prgmNameList;
+        result1=emailList;
         context=mainActivity;
         imageId=prgmImages;
         inflater = ( LayoutInflater )context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
@@ -65,7 +67,7 @@ public class DeveloperAdapter extends BaseAdapter {
 
     public class Holder
     {
-        TextView tv;
+        TextView tv,email;
         ImageView img;
     }
     @Override
@@ -75,8 +77,10 @@ public class DeveloperAdapter extends BaseAdapter {
         View rowView;
         rowView = inflater.inflate(R.layout.dilo_page_item_list, null);
         holder.tv=(TextView) rowView.findViewById(R.id.textView);
+        holder.email=(TextView) rowView.findViewById(R.id.textView2);
         holder.img=(ImageView) rowView.findViewById(R.id.imageView);
         holder.tv.setText(result[position]);
+        holder.email.setText(result1[position]);
         holder.img.setImageResource(imageId[position]);
         rowView.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -4,19 +4,32 @@
     android:layout_height="match_parent">
 
     <ImageView
-        android:layout_width="wrap_content"
+        android:layout_width="100dp"
         android:layout_height="100dp"
         android:id="@+id/imageView"
-        android:layout_weight="0.3"
-        android:layout_marginRight="5dp" />
+        android:layout_marginRight="10dp" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="100dp"
-        android:text="New Text"
-        android:id="@+id/textView"
-        android:layout_weight="0.5"
-        android:textSize="20dp"
-        android:textStyle="bold"
-        android:gravity="center_vertical" />
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="100dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:text="Name"
+            android:id="@+id/textView"
+            android:textSize="25sp"
+            android:textStyle="bold"
+            android:gravity="center_vertical"
+            android:layout_weight="1" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="Email"
+            android:id="@+id/textView2"
+            android:layout_weight="1" />
+    </LinearLayout>
 </LinearLayout>
