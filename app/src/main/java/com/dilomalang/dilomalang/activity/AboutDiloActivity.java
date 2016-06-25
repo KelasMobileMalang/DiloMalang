@@ -1,6 +1,9 @@
 package com.dilomalang.dilomalang.activity;
 
+import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+
+import com.dilomalang.dilomalang.R;
 
 /**
  * Created on : June/23/2016
@@ -14,4 +17,8 @@ import android.support.v7.app.AppCompatActivity;
  */
 
 public class AboutDiloActivity extends AppCompatActivity {
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.dilo_page_about_dilo);
+    }
 }

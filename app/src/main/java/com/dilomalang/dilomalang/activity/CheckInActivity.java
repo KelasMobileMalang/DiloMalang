@@ -1,6 +1,9 @@
 package com.dilomalang.dilomalang.activity;
 
 import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
+
+import com.dilomalang.dilomalang.R;
 
 /**
  * Created on : June/23/2016
@@ -14,4 +17,8 @@ import android.support.v7.app.AppCompatActivity;
  */
 
 public class CheckInActivity extends AppCompatActivity {
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.dilo_page_checkin);
+    }
 }

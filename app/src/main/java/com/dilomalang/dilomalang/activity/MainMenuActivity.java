@@ -21,12 +21,39 @@ import com.dilomalang.dilomalang.R;
  */
 
 public class MainMenuActivity extends AppCompatActivity {
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.dilo_page_mainmenu);
 
+        final LinearLayout buttonCheckIn = (LinearLayout) findViewById(R.id.btnCheckin);
+        buttonCheckIn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainMenuActivity.this,CheckInActivity.class);
+                startActivity(intent);
+            }
+        });
 
+        final LinearLayout buttonAboutDilo = (LinearLayout) findViewById(R.id.btnAboutDilo);
+        buttonAboutDilo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainMenuActivity.this,AboutDiloActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        final LinearLayout buttonAboutDeveloper = (LinearLayout) findViewById(R.id.btnAboutDev);
+        buttonAboutDeveloper.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainMenuActivity.this,AboutDeveloperActivity.class);
+                startActivity(intent);
+            }
+        });
 
         final LinearLayout button = (LinearLayout) findViewById(R.id.btnVisit);
         button.setOnClickListener(new View.OnClickListener() {
