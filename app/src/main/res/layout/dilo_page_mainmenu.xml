@@ -11,12 +11,19 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin">
 
-    <ImageView
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_gravity="center"
-        android:layout_weight="5"
-        android:src="@drawable/dilo" />
+        android:layout_weight="5">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_weight="5"
+            android:src="@drawable/newdilo" />
+    </LinearLayout>
+
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -26,7 +33,7 @@
 
         <TextView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:text="Selamat Datang di DILo Malang"
             android:textAlignment="center"
             android:textColor="@android:color/black"
@@ -37,10 +44,10 @@
     <com.andexert.library.RippleView
         android:id="@+id/more7"
         rv_centered="true"
-        custom:rv_rippleDuration="30"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_toLeftOf="@+id/more8">
+        android:layout_toLeftOf="@+id/more8"
+        custom:rv_rippleDuration="30">
 
         <LinearLayout
             android:id="@+id/btnCheckin"
@@ -51,6 +58,8 @@
             android:layout_weight="1"
             android:background="@drawable/layout_bg"
             android:clickable="true"
+            android:focusable="false"
+            android:focusableInTouchMode="false"
             android:orientation="horizontal"
             android:padding="16dp">
 
@@ -75,10 +84,10 @@
     <com.andexert.library.RippleView
         android:id="@+id/more5"
         rv_centered="true"
-        custom:rv_rippleDuration="30"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_toLeftOf="@+id/more6">
+        android:layout_toLeftOf="@+id/more6"
+        custom:rv_rippleDuration="30">
 
         <LinearLayout
             android:id="@+id/btnAboutDilo"
@@ -112,10 +121,10 @@
     <com.andexert.library.RippleView
         android:id="@+id/more3"
         rv_centered="true"
-        custom:rv_rippleDuration="30"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_toLeftOf="@+id/more4">
+        android:layout_toLeftOf="@+id/more4"
+        custom:rv_rippleDuration="30">
 
         <LinearLayout
             android:id="@+id/btnAboutDev"
@@ -191,8 +200,7 @@
 
         <TextView
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
+            android:layout_height="match_parent"
             android:text="Check in untuk Menggunakan Fasilitas DILo Malang"
             android:textAlignment="center"
             android:textColor="@android:color/black"
