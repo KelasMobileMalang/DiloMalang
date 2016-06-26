@@ -1,0 +1,125 @@
+{
+	"id": "568daf7a-cc6d-7b50-1453-0e3a4189a9a5",
+	"name": "DiLoMalang",
+	"description": "",
+	"order": [
+		"bb6836be-b7ce-1d12-eef3-ec5c7c2b6ff5",
+		"54bb9cda-e1ba-3906-142d-109053c9f433"
+	],
+	"folders": [],
+	"timestamp": 1466955433361,
+	"owner": "67760",
+	"remoteLink": "",
+	"public": false,
+	"published": false,
+	"requests": [
+		{
+			"id": "54bb9cda-e1ba-3906-142d-109053c9f433",
+			"headers": "",
+			"url": "https://dilomalang.mnafian.net/register",
+			"pathVariables": {},
+			"preRequestScript": null,
+			"method": "POST",
+			"collectionId": "568daf7a-cc6d-7b50-1453-0e3a4189a9a5",
+			"data": [
+				{
+					"key": "tanggal",
+					"value": "15/09/2015 13:00",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "nama",
+					"value": "M Nafian WIldana",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "startup",
+					"value": "Rimbunesia",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "keperluan",
+					"value": "Main main lagi",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "email",
+					"value": "nafianwildana@gmail.com",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "genre",
+					"value": "L",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "umur",
+					"value": "23",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "token",
+					"value": "68c1f8e3881b56a62a84d5ef7977f4a3",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"name": "https://dilomalang.mnafian.net/register",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1466955479250,
+			"version": 2,
+			"responses": [],
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {}
+		},
+		{
+			"id": "bb6836be-b7ce-1d12-eef3-ec5c7c2b6ff5",
+			"headers": "",
+			"url": "https://dilomalang.mnafian.net/check",
+			"pathVariables": {},
+			"preRequestScript": null,
+			"method": "POST",
+			"collectionId": "568daf7a-cc6d-7b50-1453-0e3a4189a9a5",
+			"data": [
+				{
+					"key": "token",
+					"value": "68c1f8e3881b56a62a84d5ef7977f4a3",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "latitude",
+					"value": "-7.9813701",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "longitude",
+					"value": "112.6288949",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"name": "https://dilomalang.mnafian.net/check",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1466955469375,
+			"version": 2,
+			"responses": [],
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {}
+		}
+	]
+}
