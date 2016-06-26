@@ -32,8 +32,8 @@ public class MainMenuActivity extends AppCompatActivity {
         buttonCheckIn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainMenuActivity.this,CheckInActivity.class);
-                startActivity(intent);
+                Intent intentPindah = new Intent(MainMenuActivity.this,CheckInActivity.class);
+                startActivity(intentPindah);
             }
         });
 
@@ -41,8 +41,8 @@ public class MainMenuActivity extends AppCompatActivity {
         buttonAboutDilo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainMenuActivity.this,AboutDiloActivity.class);
-                startActivity(intent);
+                Intent intentPindahAboutDilo = new Intent(MainMenuActivity.this,AboutDiloActivity.class);
+                startActivity(intentPindahAboutDilo);
             }
         });
 
@@ -50,8 +50,8 @@ public class MainMenuActivity extends AppCompatActivity {
         buttonAboutDeveloper.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainMenuActivity.this,AboutDeveloperActivity.class);
-                startActivity(intent);
+                Intent intentPindahAboutDeveloper = new Intent(MainMenuActivity.this,AboutDeveloperActivity.class);
+                startActivity(intentPindahAboutDeveloper);
             }
         });
 

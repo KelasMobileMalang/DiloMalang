@@ -16,37 +16,37 @@
             </intent-filter>
         </activity>
         <activity android:name=".activity.CheckInActivity">
-            <intent-filter>
+            <intentPindah>
                 <action android:name="android.intent.action.MAIN"/>
 
                 <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+            </intentPindah>
         </activity>
 
         <activity android:name=".activity.AboutDiloActivity">
-            <intent-filter>
+            <intentPindahAboutDilo>
                 <action android:name="android.intent.action.MAIN"/>
 
                 <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+            </intentPindahAboutDilo>
         </activity>
 
         <activity android:name=".activity.AboutDeveloperActivity">
-            <intent-filter>
+            <intentPindahAboutDeveloper>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+            </intentPindahAboutDeveloper>
 
         </activity>
 
-        <activity android:name=".activity.SplashScreenActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+        <!--<activity android:name=".activity.SplashScreenActivity">-->
+            <!--<intent-filter>-->
+                <!--<action android:name="android.intent.action.MAIN" />-->
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+                <!--<category android:name="android.intent.category.LAUNCHER" />-->
+            <!--</intent-filter>-->
+        <!--</activity>-->
     </application>
 
 </manifest>
