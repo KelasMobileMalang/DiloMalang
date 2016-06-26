@@ -4,11 +4,27 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="175dp"
+        android:src="@drawable/dilo"/>
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:text = "CHECK IN"
-        android:textSize="30sp"
+        android:textSize="25sp"
         />
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="75dp"
+        android:hint="Nama Lengkap"/>
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="75dp"
+        android:hint="StartUp/Instansi/Komunitas"/>
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="75dp"
+        android:hint="Keperluan"/>
 
 </LinearLayout>
