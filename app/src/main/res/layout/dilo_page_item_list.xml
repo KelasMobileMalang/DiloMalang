@@ -30,7 +30,8 @@
             android:textSize="23dp"
             android:textStyle="bold"
             android:gravity="center_vertical|bottom"
-            android:layout_weight="0.8" />
+            android:layout_weight="1"
+            android:layout_marginBottom="5dp" />
 
         <TextView
             android:layout_width="match_parent"
@@ -38,7 +39,7 @@
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:text="Email"
             android:id="@+id/textView2"
-            android:layout_weight="0.8"
-            android:gravity="center_vertical" />
+            android:layout_weight="1"
+            android:gravity="top|center_vertical" />
     </LinearLayout>
 </LinearLayout>
