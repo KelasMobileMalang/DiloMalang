@@ -57,7 +57,7 @@ public class AboutDiloActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
+//
         about_website = (Button) findViewById(R.id.about_website);
         about_website.setOnClickListener(new View.OnClickListener() {
             @Override

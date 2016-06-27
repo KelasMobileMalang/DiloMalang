@@ -101,6 +101,6 @@ Phone : (0341)-365700"
             android:textStyle="bold"
             android:background="#ff371f"
             android:id="@+id/about_website"/>
-
+<!---->
     </LinearLayout>
 </LinearLayout>
