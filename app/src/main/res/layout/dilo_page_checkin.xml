@@ -14,43 +14,43 @@
         android:layout_height="0dp"
         android:layout_weight="1"
         android:hint="Tggl Ex: 21/09/2015 14:01"
-        android:id="@+id/tanggal"/>
+        android:id="@+id/editTanggal"/>
     <EditText
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:hint="Nama Lengkap"
         android:layout_weight="1"
-        android:id="@+id/nama"/>
+        android:id="@+id/editNama"/>
     <EditText
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:hint="StartUp/Instansi/Komunitas"
         android:layout_weight="1"
-        android:id="@+id/startup"/>
+        android:id="@+id/editStartup"/>
     <EditText
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:hint="Keperluan"
         android:layout_weight="1"
-        android:id="@+id/keperluan"/>
+        android:id="@+id/editKeperluan"/>
     <EditText
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:hint="Email"
         android:layout_weight="1"
-        android:id="@+id/email"/>
+        android:id="@+id/editEmail"/>
     <EditText
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:hint="Jenis Kelamin"
-        android:id="@+id/genre"/>
+        android:hint="Jenis Kelamin Ex L/P"
+        android:id="@+id/editGenre"/>
     <EditText
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:hint="Umur"
-        android:id="@+id/umur"/>
+        android:hint="Umur Ex: 22"
+        android:id="@+id/editUmur"/>
     <Button
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -59,6 +59,6 @@
         android:layout_weight="1"
         android:textColor="@android:color/white"
         android:background="@android:color/holo_red_dark"
-        android:id="@+id/buttinCheckin"/>
+        android:id="@+id/buttoncheckin"/>
 
 </LinearLayout>
