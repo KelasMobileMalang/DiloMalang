@@ -5,8 +5,18 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
 import com.dilomalang.dilomalang.R;
+
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * Created on : June/23/2016
@@ -61,4 +71,53 @@ public class CheckInActivity extends AppCompatActivity implements View.OnClickLi
 
         buttoncheckin.setOnClickListener(this);
     }
-}
+
+    private void submitCheckin (){
+        final String tanggal = editTanggal.getText().toString().trim();
+        final String nama = editNama.getText().toString().trim();
+        final String startup = editStartup.getText().toString().trim();
+        final String keperluan = editKeperluan.getText().toString().trim();
+        final String email = editEmail.getText().toString().trim();
+        final String genre = editGenre.getText().toString().trim();
+        final String umur = editUmur.getText().toString().trim();
+
+        StringRequest stringRequest = new StringRequest(Request.Method.POST, REGISTER_URL,
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        Toast.makeText(CheckInActivity.this,response,Toast.LENGTH_LONG).show();
+                    }
+                },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        Toast.makeText(CheckInActivity.this,error.toString(),Toast.LENGTH_LONG).show();
+                    }
+                }){
+            @Override
+            protected Map<String,String> getParams(){
+                Map<String,String> params = new HashMap<String, String>();
+                params.put(KEY_TANGGAL,tanggal);
+                params.put(KEY_NAMA,nama);
+                params.put(KEY_STARTUP,startup);
+                params.put(KEY_KEPERLUAN,keperluan);
+                params.put(KEY_EMAIL,email);
+                params.put(KEY_GENRE,genre);
+                params.put(KEY_UMUR,umur);
+                params.put(KEY_TOKEN,"68c1f8e3881b56a62a84d5ef7977f4a3");
+                return params;
+            }
+
+        };
+
+        RequestQueue requestQueue = Volley.newRequestQueue(this);
+        requestQueue.add(stringRequest);
+    }
+    @Override
+    public void onClick(View v) {
+        if(v == buttoncheckin){
+            submitCheckin();
+        }
+    }
+    }
+
