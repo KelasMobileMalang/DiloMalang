@@ -6,11 +6,12 @@
     android:orientation="vertical">
 
     <ImageView
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="140dp"
         android:src="@drawable/lg_dilo"/>
+
     <ImageView
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="70dp"
         android:src="@drawable/lg_label"/>
 
@@ -27,8 +28,9 @@
             android:textStyle="bold"
             android:textColor="@android:color/holo_red_dark"
             android:textSize="20sp"/>
+
         <ImageView
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="70dp"
             android:src="@drawable/lg_mtki_telkom"/>
 
