@@ -39,8 +39,8 @@ public class AboutDeveloperActivity extends AppCompatActivity {
 
         context=this;
 
-        lv=(ListView) findViewById(R.id.listView);
-        lv.setAdapter(new DeveloperAdapter(this, prgmNameList,emailList,prgmImages));
+        /*lv=(ListView) findViewById(R.id.listView);
+        lv.setAdapter(new DeveloperAdapter(this, prgmNameList,emailList,prgmImages));*/
 
     }
 
