@@ -1,6 +1,7 @@
 package com.dilomalang.dilomalang.activity;
 
 import android.content.Context;
+import android.content.Intent;
 import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
@@ -44,6 +45,7 @@ public class SplashScreenActivity extends AppCompatActivity implements LocationL
     String longitude, latitude;
     JSONArray user;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -55,8 +57,24 @@ public class SplashScreenActivity extends AppCompatActivity implements LocationL
         lm = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
         lm.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0, 0, this);
 
+// Fauzi yang nambahin, cuma buat ngetest dihp
+//        Thread timerThread = new Thread(){
+//            public void run(){
+//                try{
+//                    sleep(3000);
+//                }catch(InterruptedException e){
+//                    e.printStackTrace();
+//                }finally{
+//                    Intent intent = new Intent(SplashScreenActivity.this,MainMenuActivity.class);
+//                    startActivity(intent);
+//                }
+//            }
+//        };
+//        timerThread.start();
+
     }
 
+    @SuppressWarnings("MissingPermission")
     @Override
     protected void onResume() {
        super.onResume();
@@ -137,5 +155,6 @@ public class SplashScreenActivity extends AppCompatActivity implements LocationL
     public void onProviderDisabled(String provider) {
 
     }
+
 
 }

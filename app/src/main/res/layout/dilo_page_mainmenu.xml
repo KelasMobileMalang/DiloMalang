@@ -21,7 +21,7 @@
             android:layout_height="match_parent"
             android:layout_gravity="center"
             android:layout_weight="5"
-            android:src="@drawable/dilo" />
+            android:src="@drawable/new_dilo" />
     </LinearLayout>
 
 
