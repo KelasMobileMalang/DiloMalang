@@ -1,7 +1,9 @@
 package com.dilomalang.dilomalang.activity;
 
-import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
+import android.location.Location;
+import android.location.LocationListener;
 import android.location.LocationManager;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -14,9 +16,10 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
-import com.dilomalang.dilomalang.R;
-import com.dilomalang.dilomalang.helper.GpsHelper;
 
+import com.dilomalang.dilomalang.R;
+
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -34,44 +37,64 @@ import java.util.Map;
  * Project    : DiloMalang
  */
 
-public class SplashScreenActivity extends AppCompatActivity {
+public class SplashScreenActivity extends AppCompatActivity implements LocationListener{
 
+    private LocationManager lm;
     TextView latituteField;
     TextView longitudeField;
     String longitude, latitude;
-    GpsHelper gpsHelper;
-    int status=0;
+    JSONArray user;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.dilo_page_splashscreen);
 
-        gpsHelper = new GpsHelper(SplashScreenActivity.this, SplashScreenActivity.this);
-        gpsHelper.startGps();
-        latitude = gpsHelper.getLatit();
-        longitude = gpsHelper.getLongit();
-        cekLokasi(latitude, longitude);
+        latituteField = (TextView) findViewById(R.id.tvLat);
+        longitudeField = (TextView) findViewById(R.id.tvLong);
 
-        Thread timerThread = new Thread(){
-            public void run(){
-                try{
-                    sleep(3000);
-                }catch(InterruptedException e){
-                    e.printStackTrace();
-                }finally{
-                    Intent intent = new Intent(SplashScreenActivity.this,MainMenuActivity.class);
-                    intent.putExtra("status", status);
-                    startActivity(intent);
-                }
-            }
-        };
-        timerThread.start();
+        lm = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
+        lm.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0, 0, this);
+
+// Fauzi yang nambahin, cuma buat ngetest dihp
+//        Thread timerThread = new Thread(){
+//            public void run(){
+//                try{
+//                    sleep(3000);
+//                }catch(InterruptedException e){
+//                    e.printStackTrace();
+//                }finally{
+//                    Intent intent = new Intent(SplashScreenActivity.this,MainMenuActivity.class);
+//                    startActivity(intent);
+//                }
+//            }
+//        };
+//        timerThread.start();
 
     }
 
-    public void cekLokasi(final String latitude, final String longitude){
+    @SuppressWarnings("MissingPermission")
+    @Override
+    protected void onResume() {
+       super.onResume();
+        lm = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
+        lm.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0, 0, this);
+    }
 
+    protected void parseJSON(String result) {
+        JSONObject myJson = null;
+        try {
+            myJson = new JSONObject(result);
+            longitude = myJson.optString("message");
+            longitudeField.setText(longitude);
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void cekLokasi(final String latitude, final String longitude){
+        RequestQueue queue = Volley.newRequestQueue(this);  // this = context
         final String url = "https://dilomalang.mnafian.net/check";
 
         StringRequest postRequest = new StringRequest(Request.Method.POST, url,
@@ -104,32 +127,34 @@ public class SplashScreenActivity extends AppCompatActivity {
                 return params;
             }
         };
-        RequestQueue queue = Volley.newRequestQueue(this);
         queue.add(postRequest);
     }
 
     @Override
-    protected void onResume() {
-        super.onResume();
-        gpsHelper.Resume();
+    public void onLocationChanged(Location location) {
+        if (location != null) {
+            latitude = String.valueOf(location.getLatitude());
+            longitude = String.valueOf(location.getLongitude());
+//            latituteField.setText(String.valueOf(location.getLatitude()));
+//            longitudeField.setText(String.valueOf(location.getLongitude()));
+            cekLokasi(latitude, longitude);
+        }
     }
 
     @Override
-    protected void onPause() {
-        super.onPause();
-        gpsHelper.Pause();
+    public void onStatusChanged(String provider, int status, Bundle extras) {
+
     }
 
-    protected void parseJSON(String result) {
-        JSONObject myJson = null;
-        try {
-            myJson = new JSONObject(result);
-            longitude = myJson.optString("message");
-            longitudeField.setText(longitude);
-            status = Integer.parseInt(myJson.optString("message"));
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }
+    @Override
+    public void onProviderEnabled(String provider) {
+
     }
+
+    @Override
+    public void onProviderDisabled(String provider) {
+
+    }
+
 
 }

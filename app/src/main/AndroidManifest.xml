@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.dilomalang.dilomalang">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
@@ -20,18 +20,24 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".activity.MainMenuActivity"/>
-        <activity android:name=".activity.CheckInActivity">
+        <activity android:name=".activity.MainMenuActivity">
             <intentPindah>
-                <action android:name="android.intent.action.MAIN"/>
+                <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intentPindah>
         </activity>
+        <activity android:name=".activity.CheckInActivity">
+            <intentPindahCheckIn>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intentPindahCheckIn>
+        </activity>
 
         <activity android:name=".activity.AboutDiloActivity">
             <intentPindahAboutDilo>
-                <action android:name="android.intent.action.MAIN"/>
+                <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intentPindahAboutDilo>
@@ -45,6 +51,7 @@
             </intentPindahAboutDeveloper>
 
         </activity>
+
     </application>
 
 </manifest>
