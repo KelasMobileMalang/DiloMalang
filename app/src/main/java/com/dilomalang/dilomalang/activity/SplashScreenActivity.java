@@ -18,6 +18,7 @@ import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 
 import com.dilomalang.dilomalang.R;
+import com.dilomalang.dilomalang.helper.GpsHelper;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -37,13 +38,11 @@ import java.util.Map;
  * Project    : DiloMalang
  */
 
-public class SplashScreenActivity extends AppCompatActivity implements LocationListener{
+public class SplashScreenActivity extends AppCompatActivity {
 
-    private LocationManager lm;
     TextView latituteField;
     TextView longitudeField;
     String longitude, latitude;
-    JSONArray user;
 
 
     @Override
@@ -54,32 +53,33 @@ public class SplashScreenActivity extends AppCompatActivity implements LocationL
         latituteField = (TextView) findViewById(R.id.tvLat);
         longitudeField = (TextView) findViewById(R.id.tvLong);
 
-        lm = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
-        lm.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0, 0, this);
+        GpsHelper gpsHelper = new GpsHelper(SplashScreenActivity.this, SplashScreenActivity.this);
+        gpsHelper.startGps();
+        gpsHelper.getLatit();
+        gpsHelper.getLongit();
 
-// Fauzi yang nambahin, cuma buat ngetest dihp
-//        Thread timerThread = new Thread(){
-//            public void run(){
-//                try{
-//                    sleep(3000);
-//                }catch(InterruptedException e){
-//                    e.printStackTrace();
-//                }finally{
-//                    Intent intent = new Intent(SplashScreenActivity.this,MainMenuActivity.class);
-//                    startActivity(intent);
-//                }
-//            }
-//        };
-//        timerThread.start();
+        cekLokasi(latitude, longitude);
+
+        Thread timerThread = new Thread(){
+            public void run(){
+                try{
+                    sleep(3000);
+                }catch(InterruptedException e){
+                    e.printStackTrace();
+                }finally{
+                    Intent intent = new Intent(SplashScreenActivity.this,MainMenuActivity.class);
+                    startActivity(intent);
+                }
+            }
+        };
+        timerThread.start();
 
     }
 
-    @SuppressWarnings("MissingPermission")
     @Override
     protected void onResume() {
        super.onResume();
-        lm = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
-        lm.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0, 0, this);
+
     }
 
     protected void parseJSON(String result) {
@@ -129,32 +129,5 @@ public class SplashScreenActivity extends AppCompatActivity implements LocationL
         };
         queue.add(postRequest);
     }
-
-    @Override
-    public void onLocationChanged(Location location) {
-        if (location != null) {
-            latitude = String.valueOf(location.getLatitude());
-            longitude = String.valueOf(location.getLongitude());
-//            latituteField.setText(String.valueOf(location.getLatitude()));
-//            longitudeField.setText(String.valueOf(location.getLongitude()));
-            cekLokasi(latitude, longitude);
-        }
-    }
-
-    @Override
-    public void onStatusChanged(String provider, int status, Bundle extras) {
-
-    }
-
-    @Override
-    public void onProviderEnabled(String provider) {
-
-    }
-
-    @Override
-    public void onProviderDisabled(String provider) {
-
-    }
-
 
 }
