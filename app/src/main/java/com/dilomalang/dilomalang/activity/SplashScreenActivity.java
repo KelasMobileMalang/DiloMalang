@@ -33,20 +33,20 @@ public class SplashScreenActivity extends AppCompatActivity {
     private TextView latituteField;
     private TextView longitudeField;
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.dilo_page_splashscreen);
-
-        latituteField = (TextView) findViewById(R.id.tvLat);
-        longitudeField = (TextView) findViewById(R.id.tvLong);
-
-        lm = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
-        locationListener = new MyLocationListener();
-
-        lm.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0, 0, locationListener);
-
-    }
+//    @Override
+//    protected void onCreate(Bundle savedInstanceState) {
+//        super.onCreate(savedInstanceState);
+//        setContentView(R.layout.dilo_page_splashscreen);
+//
+//        latituteField = (TextView) findViewById(R.id.tvLat);
+//        longitudeField = (TextView) findViewById(R.id.tvLong);
+//
+//        lm = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
+//        locationListener = new MyLocationListener();
+//
+//        lm.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0, 0, locationListener);
+//
+//    }
 
     @Override
     protected void onResume() {
