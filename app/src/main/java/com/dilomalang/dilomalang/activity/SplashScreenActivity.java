@@ -43,7 +43,8 @@ public class SplashScreenActivity extends AppCompatActivity {
     TextView latituteField;
     TextView longitudeField;
     String longitude, latitude;
-
+    GpsHelper gpsHelper;
+    String status;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,10 +54,9 @@ public class SplashScreenActivity extends AppCompatActivity {
         latituteField = (TextView) findViewById(R.id.tvLat);
         longitudeField = (TextView) findViewById(R.id.tvLong);
 
-        GpsHelper gpsHelper = new GpsHelper(SplashScreenActivity.this, SplashScreenActivity.this);
-        gpsHelper.startGps();
-        gpsHelper.getLatit();
-        gpsHelper.getLongit();
+        gpsHelper = new GpsHelper(SplashScreenActivity.this, SplashScreenActivity.this);
+        latitude = gpsHelper.getLatit();
+        longitude = gpsHelper.getLongit();
 
         cekLokasi(latitude, longitude);
 
@@ -68,6 +68,7 @@ public class SplashScreenActivity extends AppCompatActivity {
                     e.printStackTrace();
                 }finally{
                     Intent intent = new Intent(SplashScreenActivity.this,MainMenuActivity.class);
+                    intent.putExtra("status", status);
                     startActivity(intent);
                 }
             }
@@ -79,7 +80,13 @@ public class SplashScreenActivity extends AppCompatActivity {
     @Override
     protected void onResume() {
        super.onResume();
+        gpsHelper.Resume();
+    }
 
+    @Override
+    protected void onPause() {
+        super.onPause();
+        gpsHelper.Pause();
     }
 
     protected void parseJSON(String result) {
@@ -88,6 +95,7 @@ public class SplashScreenActivity extends AppCompatActivity {
             myJson = new JSONObject(result);
             longitude = myJson.optString("message");
             longitudeField.setText(longitude);
+            status = longitude;
         } catch (JSONException e) {
             e.printStackTrace();
         }
