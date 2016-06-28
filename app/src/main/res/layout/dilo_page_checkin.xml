@@ -9,42 +9,48 @@
         android:layout_height="0dp"
         android:src="@drawable/dilo"
         android:layout_weight="2"/>
-    <TextView
+    <EditText
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:text = "CHECK IN"
-        android:textSize="25sp"
-        android:layout_weight="1"/>
+        android:layout_weight="1"
+        android:hint="Tggl Ex: 21/09/2015 14:01"
+        android:id="@+id/tanggal"/>
     <EditText
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:hint="Nama Lengkap"
-        android:layout_weight="1"/>
+        android:layout_weight="1"
+        android:id="@+id/nama"/>
     <EditText
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:hint="StartUp/Instansi/Komunitas"
-        android:layout_weight="1"/>
+        android:layout_weight="1"
+        android:id="@+id/startup"/>
     <EditText
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:hint="Keperluan"
-        android:layout_weight="1"/>
+        android:layout_weight="1"
+        android:id="@+id/keperluan"/>
     <EditText
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:hint="Email"
-        android:layout_weight="1"/>
+        android:layout_weight="1"
+        android:id="@+id/email"/>
     <EditText
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:hint="Umur"/>
+        android:hint="Jenis Kelamin"
+        android:id="@+id/genre"/>
     <EditText
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:hint="Jenis Kelamin"/>
+        android:hint="Umur"
+        android:id="@+id/umur"/>
     <Button
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -52,6 +58,7 @@
         android:textSize="25sp"
         android:layout_weight="1"
         android:textColor="@android:color/white"
-        android:background="@android:color/holo_red_dark"/>
+        android:background="@android:color/holo_red_dark"
+        android:id="@+id/buttinCheckin"/>
 
 </LinearLayout>
