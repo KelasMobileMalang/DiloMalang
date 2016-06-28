@@ -104,7 +104,7 @@ public class DeveloperAdapter extends BaseAdapter {
                                             "https://github.com/eltawakkal/", "https://github.com/fahruddin14431",
                                             "https://github.com/fauzi5896", "https://github.com/muhfadlurrahman",
                                             "https://github.com/galangarbis", "https://github.com/sayvinzu",
-                                            "link9", "link10"};
+                                            "https://github.com/joetyrex", "https://tantowilathif@gmail.com"};
 
                 if (position==0){
                     pindahBrowser(link[0]);
