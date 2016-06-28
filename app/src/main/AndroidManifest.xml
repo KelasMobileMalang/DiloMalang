@@ -6,6 +6,7 @@
 
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -19,6 +20,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".activity.MainMenuActivity"/>
         <activity android:name=".activity.CheckInActivity">
             <intentPindah>
                 <action android:name="android.intent.action.MAIN"/>
@@ -43,14 +45,6 @@
             </intentPindahAboutDeveloper>
 
         </activity>
-
-        <!--<activity android:name=".activity.SplashScreenActivity">-->
-            <!--<intent-filter>-->
-                <!--<action android:name="android.intent.action.MAIN" />-->
-
-                <!--<category android:name="android.intent.category.LAUNCHER" />-->
-            <!--</intent-filter>-->
-        <!--</activity>-->
     </application>
 
 </manifest>
