@@ -1,106 +1,110 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingRight="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_vertical_margin">
-
-    <ImageView
-        android:layout_width="400dp"
-        android:layout_height="200dp"
-        android:layout_gravity="center"
-        android:src="@drawable/dilo"/>
-
-    <TextView
-        android:layout_gravity="center"
+    android:layout_height="match_parent">
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textAlignment="center"
-        android:textSize="28dp"
-        android:textStyle="bold"
-        android:textColor="#ffff"
-        android:background="#d91e19"
-        android:text="ABOUT DILO"/>
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:paddingBottom="@dimen/activity_vertical_margin"
+        android:paddingRight="@dimen/activity_vertical_margin"
+        android:paddingLeft="@dimen/activity_vertical_margin">
 
-    <TextView
-        android:padding="10dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Digital Innovation Lounge Sebuah Creative Camp yang dikembangkan oleh MIKTI bekerja sama dengan Telkom, sebagai pusat interaksi peminat dan pelaku industri kreatif digital di kota malang yang bertujuan menciptakan bibit-bibit Digital Preneur yang selanjutnya siap masuk ke industri (Creative Center). Didalam Creative Camp, komunitas kreatif digital akan diberikan pemahaman mengenai arah yang sebaiknya dilalui untuk masuk ke industri kreatif digital, termasuk arah sektor industri yang potensial untuk dijalani."
-        android:textStyle="bold"
-        android:background="#eceff1"
-        android:textColor="#000"/>
+        <ImageView
+            android:layout_width="400dp"
+            android:layout_height="200dp"
+            android:layout_gravity="center"
+            android:src="@drawable/dilo"/>
 
-    <TextView
-        android:padding="10dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Digital innovation Lounge (DILo) Malang
+        <TextView
+            android:layout_gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:textSize="28dp"
+            android:textStyle="bold"
+            android:textColor="#ffff"
+            android:background="#d91e19"
+            android:text="ABOUT DILO"/>
+
+        <TextView
+            android:padding="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Digital Innovation Lounge Sebuah Creative Camp yang dikembangkan oleh MIKTI bekerja sama dengan Telkom, sebagai pusat interaksi peminat dan pelaku industri kreatif digital di kota malang yang bertujuan menciptakan bibit-bibit Digital Preneur yang selanjutnya siap masuk ke industri (Creative Center). Didalam Creative Camp, komunitas kreatif digital akan diberikan pemahaman mengenai arah yang sebaiknya dilalui untuk masuk ke industri kreatif digital, termasuk arah sektor industri yang potensial untuk dijalani."
+            android:textStyle="bold"
+            android:background="#eceff1"
+            android:textColor="#000"/>
+
+        <TextView
+            android:padding="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Digital innovation Lounge (DILo) Malang
 Jl. Basuki Rachmad 7-9 Malang, Jawa Timur
 Email : dilomalang@gmail.com
 Phone : (0341)-365700"
-        android:background="#eceff1"
-        android:textColor="#000"/>
+            android:background="#eceff1"
+            android:textColor="#000"/>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="0.5"
-        android:layout_marginRight="5dp"
-        android:text="\@dilomalang \non twitter"
-        android:id="@+id/about_twitter"
-        android:textColor="#ffff"
-        android:textStyle="bold"
-        android:background="#1fb6ff"/>
-
-        <Button
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="0.5"
-            android:layout_marginLeft="5dp"
-            android:text="Like DILO Malang \non Facebook"
-            android:textColor="#ffff"
-            android:textStyle="bold"
-            android:background="#5249f3"
-            android:id="@+id/about_fb"/>
+            android:orientation="horizontal">
 
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:layout_marginRight="5dp"
+                android:text="\@dilomalang \non twitter"
+                android:id="@+id/about_twitter"
+                android:textColor="#ffff"
+                android:textStyle="bold"
+                android:background="#1fb6ff"/>
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:layout_marginLeft="5dp"
+                android:text="Like DILO Malang \non Facebook"
+                android:textColor="#ffff"
+                android:textStyle="bold"
+                android:background="#5249f3"
+                android:id="@+id/about_fb"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:layout_marginRight="5dp"
+                android:layout_marginTop="8dp"
+                android:text="\@dilomalang \non Instagram"
+                android:textColor="#ffff"
+                android:textStyle="bold"
+                android:background="#ff1fff"
+                android:id="@+id/about_instagram"/>
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="8dp"
+                android:text="Website DILO \nMalang"
+                android:textColor="#ffff"
+                android:textStyle="bold"
+                android:background="#ff371f"
+                android:id="@+id/about_website"/>
+        </LinearLayout>
     </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="0.5"
-            android:layout_marginRight="5dp"
-            android:layout_marginTop="8dp"
-            android:text="\@dilomalang \non Instagram"
-            android:textColor="#ffff"
-            android:textStyle="bold"
-            android:background="#ff1fff"
-            android:id="@+id/about_instagram"/>
-
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="0.5"
-            android:layout_marginLeft="5dp"
-            android:layout_marginTop="8dp"
-            android:text="Wesite DILO \nMalang"
-            android:textColor="#ffff"
-            android:textStyle="bold"
-            android:background="#ff371f"
-            android:id="@+id/about_website"/>
-<!---->
-    </LinearLayout>
-</LinearLayout>
+</ScrollView>
